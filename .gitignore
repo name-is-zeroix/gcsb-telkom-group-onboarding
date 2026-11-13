@@ -1,0 +1,10 @@
+.DS_Store
+extracted-template/
+slide-renders/
+template-content.md
+text-inventory.json
+output-content.md
+output-inventory.json
+build_deck.py
+build_ppt_from_renders.py
+quarto-reference.pptx

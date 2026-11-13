@@ -1,0 +1,1017 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Onboarding GCSB Telkom Group Batch 2</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&family=Nunito:wght@700;800&display=swap');
+
+    :root {
+      --navy: #1e2855;
+      --teal: #2796a3;
+      --ink: #20264b;
+      --muted: #6e7180;
+      --line: #dddddd;
+      --soft: #f5f5f6;
+      --white: #fff;
+      --shadow: none;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+    }
+
+    body {
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+      padding: 20px;
+      background: #dfe2ed;
+      color: var(--ink);
+      font-family: Lato, Arial, sans-serif;
+    }
+
+    .stage {
+      width: min(1280px, 100%);
+    }
+
+    .deck {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 8px;
+      background: var(--white);
+      box-shadow: 0 24px 70px rgba(30, 40, 85, .22);
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      display: none;
+      padding: 4.4% 7.2% 4.2%;
+      background: var(--white) url('assets/template-content.jpg') center / cover no-repeat;
+    }
+
+    .slide.active {
+      display: block;
+    }
+
+    .slide:not(.cover) {
+      padding-top: 4.8%;
+    }
+
+    .brand-row {
+      position: absolute;
+      top: .65%;
+      left: 7.2%;
+      right: 7.2%;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 3.35%;
+    }
+
+    .brand-row img {
+      display: block;
+      width: auto;
+      max-height: 30px;
+      object-fit: contain;
+    }
+
+    .brand-row img:nth-child(2) {
+      max-height: 32px;
+    }
+
+    .cover {
+      background-image: url('assets/template-cover.jpg');
+      padding: 19.4% 13.8% 7%;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    h1,
+    h2,
+    h3,
+    .metric strong {
+      font-family: Nunito, Arial, sans-serif;
+    }
+
+    h2 {
+      color: var(--navy);
+      font-size: clamp(20px, 2.35vw, 34px);
+      line-height: 1.05;
+    }
+
+    .subtitle {
+      margin-top: .7%;
+      color: var(--navy);
+      font-size: clamp(10px, 1.15vw, 16px);
+      font-style: italic;
+    }
+
+    .cover h1 {
+      max-width: 850px;
+      font-size: clamp(27px, 3.25vw, 47px);
+      line-height: 1.05;
+    }
+
+    .cover .subtitle {
+      max-width: 650px;
+      margin-top: 3.6%;
+      font-size: clamp(12px, 1.3vw, 18px);
+      font-style: normal;
+      font-weight: 700;
+    }
+
+    .cover-meta {
+      margin-top: 6.5%;
+      display: grid;
+      gap: 5px;
+      font-size: clamp(11px, 1.1vw, 15px);
+      font-weight: 700;
+    }
+
+    .intro-layout {
+      display: grid;
+      grid-template-columns: 31% 1fr;
+      gap: 5%;
+      align-items: center;
+      margin-top: 6%;
+    }
+
+    .portrait-panel,
+    .intro-card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, .96);
+      box-shadow: var(--shadow);
+    }
+
+    .portrait-panel {
+      margin: 0;
+      padding: 8px;
+    }
+
+    .portrait-panel img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      border-radius: 7px;
+      object-fit: cover;
+      object-position: center 18%;
+    }
+
+    .intro-card {
+      padding: 5% 6%;
+      border-top: 5px solid var(--teal);
+    }
+
+    .intro-card .eyebrow {
+      color: var(--teal);
+      font-size: clamp(10px, 1vw, 14px);
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .intro-card h3 {
+      margin-top: 8px;
+      color: var(--navy);
+      font-size: clamp(21px, 2.2vw, 32px);
+      line-height: 1.05;
+    }
+
+    .intro-card .role {
+      margin-top: 8px;
+      color: var(--teal);
+      font: 700 clamp(13px, 1.25vw, 18px) Nunito, Arial, sans-serif;
+    }
+
+    .intro-card p {
+      margin-top: 18px;
+      max-width: 560px;
+      font-size: clamp(11px, 1.05vw, 15px);
+      line-height: 1.45;
+    }
+
+    .linkedin-link {
+      display: inline;
+      color: var(--teal);
+      font-size: clamp(9px, .9vw, 12px);
+      font-weight: 700;
+      text-decoration: underline;
+    }
+
+    .linkedin-line {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 16px;
+    }
+
+    .linkedin-icon {
+      width: 16px;
+      height: 16px;
+      flex: 0 0 auto;
+      color: var(--teal);
+    }
+
+    .linkedin-link:hover,
+    .linkedin-link:focus-visible {
+      color: var(--navy);
+      outline: none;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.7%;
+      margin-top: 4.2%;
+    }
+
+    .metric {
+      min-height: 78px;
+      display: grid;
+      place-items: center;
+      align-content: center;
+      padding: 8px;
+      border-radius: 10px;
+      background: var(--soft);
+      border: 1px solid var(--line);
+      text-align: center;
+    }
+
+    .metric:nth-child(1) {
+      background: var(--navy);
+      border-color: var(--navy);
+      color: var(--white);
+    }
+
+    .metric:nth-child(2) {
+      background: var(--teal);
+      border-color: var(--teal);
+      color: var(--white);
+    }
+
+    .metric strong {
+      display: block;
+      font-size: clamp(19px, 2.3vw, 32px);
+      line-height: 1;
+    }
+
+    .metric span {
+      display: block;
+      margin-top: 7px;
+      font-size: clamp(8px, .85vw, 12px);
+    }
+
+    .columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.2%;
+      margin-top: 2.4%;
+    }
+
+    .pathway-layout {
+      gap: 1.5%;
+      margin-top: 2.2%;
+    }
+
+    .pathway-layout>.panel {
+      min-height: 0;
+    }
+
+    .pathway-layout .panel-body {
+      padding: 11px 15px;
+    }
+
+    .pathway-layout .list {
+      gap: 5px;
+      font-size: clamp(9px, .92vw, 12.5px);
+      line-height: 1.18;
+    }
+
+    .pathway-layout > .panel:nth-child(3) .list {
+      gap: 3px;
+      font-size: clamp(8px, .82vw, 11px);
+      line-height: 1.08;
+    }
+
+    .panel {
+      overflow: hidden;
+      min-height: 265px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, .96);
+      box-shadow: var(--shadow);
+    }
+
+    .panel h3 {
+      padding: 10px 16px;
+      color: var(--white);
+      background: var(--teal);
+      font-size: clamp(12px, 1.1vw, 16px);
+    }
+
+    .panel.navy h3 {
+      background: var(--navy);
+    }
+
+    .panel-body {
+      padding: 15px 18px 13px;
+    }
+
+    .list {
+      display: grid;
+      gap: 8px;
+      padding: 0;
+      list-style: none;
+      font-size: clamp(10px, 1.02vw, 14px);
+      line-height: 1.22;
+    }
+
+    .list li {
+      position: relative;
+      padding-left: 16px;
+    }
+
+    .list li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--teal);
+      font-weight: 800;
+    }
+
+    .list b {
+      font-weight: 700;
+    }
+
+    .course-link {
+      color: inherit;
+      text-decoration: underline;
+      text-decoration-color: var(--teal);
+      text-underline-offset: 2px;
+    }
+
+    .course-link:hover,
+    .course-link:focus-visible {
+      color: var(--teal);
+    }
+
+    .footer {
+      position: absolute;
+      left: 7.2%;
+      right: 7.2%;
+      bottom: 2.2%;
+      display: flex;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: clamp(8px, .7vw, 10px);
+      font-style: italic;
+    }
+
+    .mockups {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .browser {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--soft);
+    }
+
+    .browser-top {
+      height: 22px;
+      display: flex;
+      gap: 5px;
+      align-items: center;
+      padding: 0 9px;
+      background: var(--navy);
+    }
+
+    .browser:nth-child(2) .browser-top {
+      background: var(--teal);
+    }
+
+    .browser-top i {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: white;
+      opacity: .9;
+    }
+
+    .browser-body {
+      min-height: 148px;
+      padding: 12px;
+    }
+
+    .browser-body strong {
+      display: block;
+      font-family: Nunito, Arial, sans-serif;
+      font-size: 12px;
+    }
+
+    .browser-body p {
+      margin-top: 12px;
+      padding: 7px;
+      border-radius: 5px;
+      background: white;
+      font-size: 10px;
+      line-height: 1.35;
+    }
+
+    .browser-body p+p {
+      margin-top: 7px;
+    }
+
+    .steps {
+      display: grid;
+      gap: 14px;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 10px;
+      align-items: start;
+    }
+
+    .step-no {
+      display: grid;
+      place-items: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--teal);
+      color: white;
+      font: 700 12px Nunito, Arial, sans-serif;
+    }
+
+    .step strong {
+      display: block;
+      font-family: Nunito, Arial, sans-serif;
+      font-size: clamp(11px, 1vw, 14px);
+    }
+
+    .step p {
+      margin-top: 3px;
+      font-size: clamp(9px, .85vw, 12px);
+      line-height: 1.25;
+    }
+
+    .deprecated-layout {
+      display: grid;
+      grid-template-columns: 1.45fr 1fr;
+      gap: 2.5%;
+      align-items: center;
+      margin-top: 5%;
+    }
+
+    .deprecated-figure {
+      margin: 0;
+      padding: 8px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, .96);
+      box-shadow: var(--shadow);
+    }
+
+    .deprecated-figure img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      border-radius: 7px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .deprecated-panel {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, .96);
+    }
+
+    .deprecated-panel h3 {
+      padding: 10px 16px;
+      color: var(--white);
+      background: var(--navy);
+      font: 700 clamp(12px, 1.1vw, 16px) Nunito, Arial, sans-serif;
+    }
+
+    .deprecated-panel .list {
+      padding: 16px 18px;
+      font-size: clamp(10px, 1vw, 14px);
+    }
+
+    .closing {
+      padding: 20% 14% 7%;
+    }
+
+    .closing h1 {
+      color: var(--navy);
+      font-size: clamp(30px, 3.8vw, 54px);
+      line-height: 1;
+    }
+
+    .closing .subtitle {
+      margin-top: 3%;
+      font-size: clamp(14px, 1.45vw, 20px);
+    }
+
+    .support {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5%;
+      margin-top: 5.5%;
+      max-width: 900px;
+    }
+
+    .support-card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      background: rgba(255, 255, 255, .95);
+      box-shadow: var(--shadow);
+    }
+
+    .support-card h3 {
+      padding: 9px 14px;
+      color: white;
+      background: var(--teal);
+      font: 700 clamp(11px, 1vw, 14px) Nunito, Arial, sans-serif;
+    }
+
+    .support-card:last-child h3 {
+      background: var(--navy);
+    }
+
+    .support-card p {
+      padding: 13px 14px;
+      font-size: clamp(9px, .95vw, 13px);
+      line-height: 1.3;
+    }
+
+    .closing-note {
+      margin-top: 5%;
+      color: var(--teal);
+      font: 700 clamp(12px, 1.2vw, 17px) Nunito, Arial, sans-serif;
+    }
+
+    .demo-slide {
+      display: none;
+      place-items: center;
+      text-align: center;
+    }
+
+    .demo-slide.active {
+      display: grid;
+    }
+
+    .demo-slide h2 {
+      font-size: clamp(34px, 5vw, 68px);
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    button {
+      border: 0;
+      border-radius: 999px;
+      padding: 8px 16px;
+      cursor: pointer;
+      color: var(--white);
+      background: var(--navy);
+      font: 700 13px Lato, Arial, sans-serif;
+    }
+
+    button:hover,
+    button:focus-visible {
+      background: var(--teal);
+      outline: 3px solid rgba(39, 150, 163, .25);
+      outline-offset: 2px;
+    }
+
+    .counter {
+      min-width: 48px;
+      color: var(--navy);
+      text-align: center;
+      font-size: 13px;
+    }
+
+    @media (max-width: 760px) {
+      body {
+        padding: 8px;
+      }
+
+      .deck {
+        border-radius: 4px;
+      }
+
+      .slide {
+        padding-left: 5.5%;
+        padding-right: 5.5%;
+      }
+
+      .cover,
+      .closing {
+        padding-left: 9%;
+        padding-right: 9%;
+      }
+
+      .metrics {
+        gap: 1%;
+      }
+
+      .metric {
+        min-height: 56px;
+        padding: 4px;
+      }
+
+      .metric span {
+        margin-top: 3px;
+      }
+
+      .columns {
+        gap: 1.5%;
+      }
+
+      .panel-body {
+        padding: 10px;
+      }
+
+      .list {
+        gap: 5px;
+      }
+
+      .mockups {
+        gap: 5px;
+      }
+
+      .browser-body {
+        min-height: 120px;
+        padding: 8px;
+      }
+
+      .footer {
+        left: 5.5%;
+        right: 5.5%;
+      }
+
+      .intro-layout {
+        gap: 3%;
+      }
+
+      .intro-card {
+        padding: 4%;
+      }
+    }
+
+    @media print {
+      @page { size: 16in 9in; margin: 0; }
+      body {
+        display: block;
+        padding: 0;
+        background: white;
+      }
+
+      .stage {
+        width: 100%;
+      }
+
+      .deck {
+        overflow: visible;
+        aspect-ratio: auto;
+        box-shadow: none;
+      }
+
+      .slide,
+      .slide.active {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 16 / 9;
+        page-break-after: always;
+      }
+
+      .controls {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="stage" aria-label="Presentasi Onboarding GCSB Telkom Group Batch 2">
+    <section class="deck">
+      <article class="slide cover active" aria-label="Slide 1">
+        <h1>Onboarding Google Cloud Skills Boost (GCSB) Telkom Group Batch 2</h1>
+        <p class="subtitle">Learning Pathway, Platform Navigation, &amp; Success Strategy</p>
+        <div class="cover-meta"><span>13 November 2026</span></div>
+      </article>
+
+      <article class="slide" aria-label="Slide 2">
+        <h2>Perkenalan Fasilitator</h2>
+        <p class="subtitle">Pendamping Anda dalam perjalanan belajar GCSB</p>
+        <div class="intro-layout">
+          <figure class="portrait-panel"><img src="assets/fadhel-muhammad-apriansyah.jpg"
+              alt="Fadhel Muhammad Apriansyah, GCSB Facilitator"></figure>
+          <section class="intro-card">
+            <p class="eyebrow">Your GCSB Facilitator</p>
+            <h3>Fadhel Muhammad Apriansyah</h3>
+            <p class="role">GCSB Facilitator</p>
+            <p>Saya siap mendampingi peserta dalam memahami learning pathway, menavigasi Google Skills Platform,
+              menyelesaikan hands-on lab, dan menjaga progress pembelajaran tetap terarah.</p>
+            <div class="linkedin-line">
+              <svg class="linkedin-icon" viewBox="0 0 24 24" role="img" aria-label="LinkedIn">
+                <rect width="24" height="24" rx="4" fill="currentColor" />
+                <circle cx="7.2" cy="7.2" r="1.5" fill="white" />
+                <rect x="5.9" y="10" width="2.6" height="8.2" fill="white" />
+                <path
+                  d="M11 10h2.5v1.1h.1c.4-.7 1.3-1.4 2.7-1.4 2.9 0 3.4 1.9 3.4 4.4v4.1h-2.6v-3.6c0-.9 0-2.1-1.3-2.1s-1.5 1-1.5 2v3.7H11V10z"
+                  fill="white" />
+              </svg>
+              <a class="linkedin-link" href="https://www.linkedin.com/in/fadhel-muhammad-apriansyah/" target="_blank"
+                rel="noopener noreferrer">https://www.linkedin.com/in/fadhel-muhammad-apriansyah/</a>
+            </div>
+          </section>
+        </div>
+        <div class="footer"><span>Learning support untuk membantu Anda mencapai target
+            pembelajaran.</span><span>2</span></div>
+      </article>
+
+      <article class="slide" aria-label="Slide 3">
+        <h2>Learning Pathways (Fokus Utama: AI &amp; Cybersecurity)</h2>
+        <p class="subtitle">Benchmark penyelesaian: 10–20 jam pembelajaran</p>
+        <div class="metrics">
+          <div class="metric"><strong>AI + SEC</strong><span>Fokus utama</span></div>
+          <div class="metric"><strong>05</strong><span>Jalur Cybersecurity</span></div>
+          <div class="metric"><strong>03</strong><span>AI Main Course</span></div>
+          <div class="metric"><strong>04</strong><span>AI Additional Course</span></div>
+        </div>
+        <div class="columns pathway-layout">
+          <section class="panel navy">
+            <h3>Jalur Cybersecurity</h3>
+            <div class="panel-body">
+              <ul class="list">
+                <li><a class="course-link" href="https://www.skills.google/paths/4942" target="_blank"
+                    rel="noopener noreferrer">GCP Cloud Security Fundamentals</a></li>
+                <li><a class="course-link" href="https://www.skills.google/paths/4943" target="_blank"
+                    rel="noopener noreferrer">Network Security &amp; Perimeter Defense</a></li>
+                <li><a class="course-link" href="https://www.skills.google/paths/4944" target="_blank"
+                    rel="noopener noreferrer">Identity, Access &amp; Data Protection</a></li>
+                <li><a class="course-link" href="https://www.skills.google/paths/4945" target="_blank"
+                    rel="noopener noreferrer">Application &amp; Container Security (DevSecOps)</a></li>
+                <li><a class="course-link" href="https://www.skills.google/paths/4946" target="_blank"
+                    rel="noopener noreferrer">Security Operations (SecOps) &amp; Incident Response</a></li>
+              </ul>
+            </div>
+          </section>
+          <section class="panel">
+            <h3>Jalur AI (Generative AI on GCP)</h3>
+            <div class="panel-body">
+              <ul class="list">
+                <li><a class="course-link" href="https://www.skills.google/paths/3666" target="_blank"
+                    rel="noopener noreferrer">Gemini Enterprise and Gemini Notebook</a></li>
+                <li><a class="course-link" href="https://www.skills.google/paths/2919" target="_blank"
+                    rel="noopener noreferrer">Gemini for Government</a></li>
+                <li><a class="course-link" href="https://www.skills.google/paths/3180" target="_blank"
+                    rel="noopener noreferrer">Gemini Enterprise for Customer Experience</a></li>
+              </ul>
+            </div>
+          </section>
+          <section class="panel navy">
+            <h3>Jalur Cybersecurity (Additional Course)</h3>
+            <div class="panel-body">
+              <ul class="list">
+                <li><a class="course-link" href="https://www.skills.google/paths/419" target="_blank"
+                    rel="noopener noreferrer">Beginner: Google Cloud Cybersecurity Certificate</a></li>
+                <li><a class="course-link" href="https://www.skills.google/paths/581" target="_blank"
+                    rel="noopener noreferrer">Google Security Operations</a></li>
+                <li><a class="course-link" href="https://www.skills.google/paths/15" target="_blank"
+                    rel="noopener noreferrer">Professional Security Engineer Certification</a></li>
+                <li><a class="course-link" href="https://www.skills.google/paths/2150" target="_blank"
+                    rel="noopener noreferrer">Professional Security Operations Engineer Certification</a></li>
+                <li><a class="course-link" href="https://www.skills.google/paths/1839" target="_blank"
+                    rel="noopener noreferrer">Network Security</a></li>
+                <li><a class="course-link" href="https://www.skills.google/paths/4461" target="_blank"
+                    rel="noopener noreferrer">Govern and Secure Enterprise Agents</a></li>
+              </ul>
+            </div>
+          </section>
+          <section class="panel">
+            <h3>Jalur AI (Additional Course)</h3>
+            <div class="panel-body">
+              <ul class="list">
+                <li><a class="course-link" href="https://www.skills.google/paths/1803" target="_blank"
+                    rel="noopener noreferrer">Gemini in BigQuery</a></li>
+                <li><a class="course-link" href="https://www.skills.google/paths/249" target="_blank"
+                    rel="noopener noreferrer">Google Workspace with Gemini</a></li>
+                <li><a class="course-link" href="https://www.skills.google/paths/4864" target="_blank"
+                    rel="noopener noreferrer">Gemini for Financial Services</a></li>
+                <li><a class="course-link" href="https://www.skills.google/paths/4869" target="_blank"
+                    rel="noopener noreferrer">Gemini for Legal</a></li>
+                <li><a class="course-link" href="https://www.skills.google/paths/4525" target="_blank"
+                    rel="noopener noreferrer">Professional Agentic Architect Certification</a></li>
+              </ul>
+            </div>
+          </section>
+        </div>
+        <div class="footer"><span>Struktur pathway dapat disesuaikan dengan target belajar dan kebutuhan
+            peran.</span><span>3</span></div>
+      </article>
+
+      <article class="slide" aria-label="Slide 4">
+        <h2>Google Skills Platform Navigation</h2>
+        <p class="subtitle">Langkah Praktis Menggunakan Platform</p>
+        <div class="metrics">
+          <div class="metric"><strong>01</strong><span>Dashboard &amp; Profil</span></div>
+          <div class="metric"><strong>02</strong><span>Course vs Lab</span></div>
+          <div class="metric"><strong>03</strong><span>Incognito Window</span></div>
+          <div class="metric"><strong>04</strong><span>Progress &amp; Badge</span></div>
+        </div>
+        <div class="columns">
+          <section class="panel navy">
+            <h3>Langkah Utama</h3>
+            <div class="panel-body">
+              <ul class="list">
+                <li><b>Dashboard &amp; Profil:</b> Pastikan akun Telkom Group terhubung dengan benar.</li>
+                <li><b>Course vs Hands-on Lab:</b> Bedakan materi teori dan lingkungan praktik (Sandbox).</li>
+                <li><b>Aturan Wajib Lab:</b> Gunakan Incognito/Private Window saat menekan “Start Lab”.</li>
+                <li><b>Progress &amp; Badge:</b> Dapatkan Skill Badge setiap menyelesaikan satu Quest.</li>
+              </ul>
+            </div>
+          </section>
+          <section class="panel">
+            <h3>Visual Orientasi Platform</h3>
+            <div class="panel-body">
+              <div class="mockups">
+                <div class="browser">
+                  <div class="browser-top"><i></i><i></i><i></i></div>
+                  <div class="browser-body"><strong>Dashboard GCSB</strong>
+                    <p>Profil: Telkom Group</p>
+                    <p>Learning progress</p>
+                    <p>Quest &amp; Skill Badge</p>
+                  </div>
+                </div>
+                <div class="browser">
+                  <div class="browser-top"><i></i><i></i><i></i></div>
+                  <div class="browser-body"><strong>Start Lab</strong>
+                    <p>1. Buka Incognito</p>
+                    <p>2. Klik Start Lab</p>
+                    <p>3. Ikuti instruksi</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="footer"><span>Gunakan browser bersih untuk mengurangi risiko error atau suspend
+            kredensial.</span><span>4</span></div>
+      </article>
+
+      <article class="slide" aria-label="Slide 5">
+        <h2>Skip Modul dengan Label [DEPRECATED]</h2>
+        <p class="subtitle">Pastikan course yang dipilih masih aktif dan relevan</p>
+        <div class="deprecated-layout">
+          <figure class="deprecated-figure">
+            <img src="assets/deprecated-warning.png" alt="Contoh modul Google Skills dengan label deprecated">
+          </figure>
+          <section class="deprecated-panel">
+            <h3>Aturan Praktis</h3>
+            <ul class="list">
+              <li>Jika course memiliki label <b>[DEPRECATED]</b>, skip atau abaikan modul tersebut.</li>
+              <li>Pilih course aktif yang tersedia pada daftar resmi GCSB.</li>
+            </ul>
+          </section>
+        </div>
+        <div class="footer"><span>Periksa status course sebelum memulai pembelajaran.</span><span>5</span></div>
+      </article>
+
+      <article class="slide" aria-label="Slide 6">
+        <h2>Learning Tips &amp; Success Strategy</h2>
+        <p class="subtitle">Konsisten &amp; Capai Target Pembelajaran Anda</p>
+        <div class="metrics">
+          <div class="metric"><strong>10–20h</strong><span>Target waktu belajar</span></div>
+          <div class="metric"><strong>01</strong><span>Time blocking</span></div>
+          <div class="metric"><strong>100/100</strong><span>Check My Progress</span></div>
+          <div class="metric"><strong>AI+</strong><span>Additional course</span></div>
+        </div>
+        <div class="columns">
+          <section class="panel navy">
+            <h3>Strategi Belajar</h3>
+            <div class="panel-body">
+              <ul class="list">
+                <li><b>Time Blocking:</b> Jadwalkan waktu belajar spesifik setiap minggu untuk memenuhi target 10–20
+                  jam.</li>
+                <li><b>Pahami Tujuan:</b> Baca tujuan pembelajaran dan selesaikan materi teori sebelum masuk lab.</li>
+                <li><b>Praktik Bertahap:</b> Kerjakan satu lab sampai selesai; ulangi lab yang gagal untuk memahami
+                  penyebabnya.</li>
+                <li><b>Catat Pembelajaran:</b> Simpan command, konsep, dan error penting sebagai referensi.</li>
+                <li><b>Check My Progress:</b> Klik tombol ini sebelum End Lab untuk memastikan nilai masuk (100/100).
+                </li>
+                <li><b>Review Mingguan:</b> Cek badge dan progres; lengkapi Additional Course bila path AI di bawah 10
+                  jam.</li>
+              </ul>
+            </div>
+          </section>
+          <section class="panel">
+            <h3>Checklist Sebelum End Lab</h3>
+            <div class="panel-body steps">
+              <div class="step"><span class="step-no">1</span>
+                <div><strong>Review instruksi</strong>
+                  <p>Pastikan semua langkah lab selesai dan tidak ada detail yang terlewat.</p>
+                </div>
+              </div>
+              <div class="step"><span class="step-no">2</span>
+                <div><strong>Check My Progress</strong>
+                  <p>Validasi skor atau status penyelesaian sampai tampil 100/100.</p>
+                </div>
+              </div>
+              <div class="step"><span class="step-no">3</span>
+                <div><strong>End Lab</strong>
+                  <p>Akhiri lab hanya setelah progress tersimpan dengan benar.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="footer"><span>Konsistensi kecil setiap minggu menghasilkan progress yang
+            terukur.</span><span>6</span></div>
+      </article>
+
+      <article class="slide demo-slide" aria-label="Slide 7">
+        <h2>Demo Lab</h2>
+      </article>
+
+      <article class="slide cover closing" aria-label="Slide 8">
+        <h1>Q&amp;A &amp; Dukungan Program</h1>
+        <p class="subtitle">Kami Siap Mendampingi Anda</p>
+        <div class="support">
+          <section class="support-card">
+            <h3>WA Community</h3>
+            <p>Diskusi teknis, tanya jawab error lab, dan update progres bersama fasilitator.</p>
+          </section>
+          <section class="support-card">
+            <h3>Helpdesk (CS Telkom CorpU)</h3>
+            <p>Hubungi untuk kendala akses, aktivasi akun, atau akun GCSB yang ter-suspend.</p>
+          </section>
+        </div>
+        <p class="closing-note">Selanjutnya: sesi Q&amp;A sesuai rundown.</p>
+      </article>
+    </section>
+    <nav class="controls" aria-label="Navigasi slide">
+      <button type="button" id="prev" aria-label="Slide sebelumnya">← Prev</button>
+      <span class="counter" id="counter">1 / 8</span>
+      <button type="button" id="next" aria-label="Slide berikutnya">Next →</button>
+    </nav>
+  </main>
+  <script>
+    const slides = [...document.querySelectorAll('.slide')];
+    const counter = document.querySelector('#counter');
+    let current = 0;
+    function show(index) {
+      current = (index + slides.length) % slides.length;
+      slides.forEach((slide, i) => slide.classList.toggle('active', i === current));
+      counter.textContent = `${current + 1} / ${slides.length}`;
+    }
+    document.querySelector('#prev').addEventListener('click', () => show(current - 1));
+    document.querySelector('#next').addEventListener('click', () => show(current + 1));
+    document.addEventListener('keydown', event => {
+      if (['ArrowRight', 'PageDown', ' '].includes(event.key)) show(current + 1);
+      if (['ArrowLeft', 'PageUp'].includes(event.key)) show(current - 1);
+      if (event.key === 'Home') show(0);
+      if (event.key === 'End') show(slides.length - 1);
+    });
+    show(0);
+  </script>
+</body>
+
+</html>

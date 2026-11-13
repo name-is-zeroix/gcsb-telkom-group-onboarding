@@ -1,0 +1,23 @@
+GCP Cloud Security Fundamentals : https://www.skills.google/paths/4942
+Network Security & Perimeter Defense : https://www.skills.google/paths/4943
+Identity, Access & Data Protection : https://www.skills.google/paths/4944
+Application & Container Security (DevSecOps) : https://www.skills.google/paths/4945
+Security Operations (SecOps) & Incident Response : https://www.skills.google/paths/4946
+
+
+
+Gemini Enterprise and Gemini Notebook: https://www.skills.google/paths/3666
+Gemini in BigQuery : https://www.skills.google/paths/1803
+Gemini for Government : https://www.skills.google/paths/2919
+Google Workspace with Gemini : https://www.skills.google/paths/249
+Gemini Enterprise for Customer Experience : https://www.skills.google/paths/3180
+Gemini for financial services : https://www.skills.google/paths/4864
+Gemini for Legal : https://www.skills.google/paths/4869
+
+Beginner: Google Cloud Cybersecurity Certificate : https://www.skills.google/paths/419
+Google Security Operations : https://www.skills.google/paths/581
+Professional Security Engineer Certification : https://www.skills.google/paths/15
+Professional Security Operations Engineer Certification : https://www.skills.google/paths/2150
+Network Security : https://www.skills.google/paths/1839
+Govern and Secure Enterprise Agents : https://www.skills.google/paths/4461
+Professional Agentic Architect Certification : https://www.skills.google/paths/4525
