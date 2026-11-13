@@ -6,6 +6,11 @@ Security Operations (SecOps) & Incident Response : https://www.skills.google/pat
 
 
 
+Beginner: Introduction to Generative AI : https://www.skills.google/paths/118
+Build and Modernize Applications with Generative AI : https://www.skills.google/paths/1282
+Deploy and Manage Generative AI Models : https://www.skills.google/paths/1283
+Agentic AI on Google Cloud : https://www.skills.google/paths/3273
+Generative AI Leader : https://www.skills.google/paths/1951
 Gemini Enterprise and Gemini Notebook: https://www.skills.google/paths/3666
 Gemini in BigQuery : https://www.skills.google/paths/1803
 Gemini for Government : https://www.skills.google/paths/2919
