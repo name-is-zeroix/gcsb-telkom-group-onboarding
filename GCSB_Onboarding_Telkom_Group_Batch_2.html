@@ -647,12 +647,17 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1.5%;
+      grid-auto-rows: auto;
+      align-content: space-between;
+      min-height: 68%;
       margin-top: 3.2%;
     }
 
     .expanded-card {
+      display: flex;
+      flex-direction: column;
       overflow: hidden;
-      min-height: 245px;
+      min-height: 0;
       border: 1px solid var(--line);
       border-radius: 10px;
       background: rgba(255, 255, 255, .96);
@@ -677,13 +682,17 @@
     }
 
     .expanded-layout.compact {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.4%;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 1.4%;
+      row-gap: 2.2%;
+      align-content: center;
+      align-items: start;
+      min-height: 76%;
       margin-top: 2.8%;
     }
 
     .expanded-layout.compact .expanded-card {
-      min-height: 112px;
+      min-height: 0;
     }
 
     .expanded-layout.compact .expanded-card .list {
@@ -1116,7 +1125,7 @@
             <div class="panel-body">
               <ul class="list">
                 <li><a class="course-link" href="https://www.skills.google/paths/3666" target="_blank"
-                    rel="noopener noreferrer">Gemini Enterprise and Gemini Notebook</a></li>
+                    rel="noopener noreferrer">Gemini Enterprise &amp; NotebookLM</a></li>
                 <li><a class="course-link" href="https://www.skills.google/paths/2919" target="_blank"
                     rel="noopener noreferrer">Gemini for Government</a></li>
                 <li><a class="course-link" href="https://www.skills.google/paths/3180" target="_blank"
@@ -1230,12 +1239,6 @@
               </li>
               <li class="path-trigger" tabindex="0" role="button" data-page="34" title="Open path detail">Data Scientist<a class="path-link" href="https://www.skills.google/paths/504" target="_blank" rel="noopener noreferrer" title="Buka di skills.google">&#8599;</a>
               </li>
-              <li class="path-trigger" tabindex="0" role="button" data-page="35" title="Open path detail">Deploy and
-                manage generative AI models</li>
-              <li class="path-trigger" tabindex="0" role="button" data-page="36" title="Open path detail">Gemini for
-                Government</li>
-              <li class="path-trigger" tabindex="0" role="button" data-page="37" title="Open path detail">Build and
-                modernize applications with GenAI</li>
             </ul>
           </section>
           <section class="expanded-card navy">
@@ -1258,12 +1261,6 @@
                 Leader Add-ons</li>
               <li class="path-trigger" tabindex="0" role="button" data-page="45" title="Open path detail">Citizen
                 Developer</li>
-              <li class="path-trigger" tabindex="0" role="button" data-page="46" title="Open path detail">Gemini
-                Enterprise &amp; NotebookLM</li>
-              <li class="path-trigger" tabindex="0" role="button" data-page="47" title="Open path detail">Gemini
-                Enterprise for Customer Experience</li>
-              <li class="path-trigger" tabindex="0" role="button" data-page="48" title="Open path detail">Agentic AI on
-                Google Cloud</li>
             </ul>
           </section>
           <section class="expanded-card">
@@ -1433,7 +1430,7 @@
         <p>A cloud engineer configures, sets up, and deploys cloud solutions.</p>
         <h4>What you will learn</h4>
         <p>Google Compute Engine, Cloud Logging, Cloud Monitoring; Google Cloud Storage, and more. On-demand
-          Virtual/Classroom Spark Skill badge Self-paced Labs Resource DS Data Sheet GS Google Skills</p>
+          Virtual/Classroom Spark Skill badge Self-paced Labs Resource</p>
         <h4>Learning path courses</h4>
         <ul>
           <li>Google Cloud Fundamentals: Core Infrastructure</li>
@@ -1460,8 +1457,7 @@
         <h4>Overview</h4>
         <p>A Cloud Architect designs, develops, and manages robust, secure, scalable, and dynamic solutions.</p>
         <h4>What you will learn</h4>
-        <p>Google Compute Engine, GKE, Cloud Logging, Cloud Monitoring; Terraform, and more. On-demand Virtual/Classroom
-          Spark Skill badge Self-paced Labs Resource DS Data Sheet GS Google Skills</p>
+        <p>Google Compute Engine, GKE, Cloud Logging, Cloud Monitoring; Terraform, and more.</p>
         <h4>Learning path courses</h4>
         <ul>
           <li>Google Cloud Fundamentals: Core Infrastructure</li>
@@ -1501,7 +1497,7 @@
           Google&#x27;s infrastructure.</p>
         <h4>What you will learn</h4>
         <p>- Google Kubernetes Engine; - Scaling deployments on Google Kubernetes Engine and more. On-demand
-          Virtual/Classroom Spark Skill badge Self-paced Labs Resource DS Data Sheet GS Google Skills</p>
+          Virtual/Classroom Spark Skill badge Self-paced Labs Resource</p>
         <h4>Learning path courses</h4>
         <ul>
           <li>Google Cloud Fundamentals: Core Infrastructure</li>
@@ -1522,8 +1518,7 @@
           infrastructure. This learning path prepares you for the PCNE.</p>
         <h4>What you will learn</h4>
         <p>- Design and implement networks in Google Cloud - VPCs, Cloud DNS, Cloud IAM, Networking, Cloud Armor, Cloud
-          Shell, Cloud Interconnect, Network Connectivity Center On-demand Virtual/Classroom Spark Skill badge
-          Self-paced Labs Resource DS Data Sheet GS Google Skills</p>
+          Shell, Cloud Interconnect, Network Connectivity Center</p>
         <h4>Learning path courses</h4>
         <ul>
           <li>Preparing for Your Professional Cloud Network Engineer Journey </li>
@@ -1556,7 +1551,7 @@
           protect sensitive information.</p>
         <h4>What you will learn</h4>
         <p>-Google Kubernetes Engine, Cloud Shell, virtual machines; -Cloud Functions, IAM, and more. On-demand
-          Virtual/Classroom Spark Skill badge Self-paced Labs Resource DS Data Sheet GS Google Skills</p>
+          Virtual/Classroom Spark Skill badge Self-paced Labs Resource</p>
         <h4>Learning path courses</h4>
         <ul>
           <li>Preparing for Your Professional Cloud Security Engineer Journey</li>
@@ -1585,8 +1580,7 @@
           Google Cloud. It covers numerous product stacks that are involved directly in proactive and reactive security
           operations.</p>
         <h4>What you will learn</h4>
-        <p>-Security operations; -SecOps, SCC, GTI and modern security operations On-demand Virtual/Classroom Spark
-          Skill badge Self-paced Labs Resource DS Data Sheet GS Google Skills</p>
+        <p>-Security operations; -SecOps, SCC, GTI and modern security operations</p>
         <h4>Learning path courses</h4>
         <ul>
           <li>Build a PSOE Certification Study Guide </li>
@@ -1617,8 +1611,7 @@
           sensitive information.</p>
         <h4>What you will learn</h4>
         <p>-Google Kubernetes Engine (GKE) -Google Cloud Security, DevOps -CI/CD and how they all work together to
-          secure containers and GKE in Google Cloud. On-demand Virtual/Classroom Spark Skill badge Self-paced Labs
-          Resource DS Data Sheet GS Google Skills</p>
+          secure containers and GKE in Google Cloud.</p>
         <h4>Learning path courses</h4>
         <ul>
           <li>Google Cloud Fundamentals: Core Infrastructure</li>
@@ -1644,7 +1637,7 @@
         <p>A Cloud Developer designs, builds, analyzes, and maintains cloud-native applications.</p>
         <h4>What you will learn</h4>
         <p>- Google Compute Engine, Cloud Logging, Cloud Monitoring; - Google Cloud Storage, and more. On-demand
-          Virtual/Classroom Spark Skill badge Self-paced Labs Resource DS Data Sheet GS Google Skills</p>
+          Virtual/Classroom Spark Skill badge Self-paced Labs Resource</p>
         <h4>Learning path courses</h4>
         <ul>
           <li>Google Cloud Fundamentals: Core Infrastructure</li>
@@ -1672,7 +1665,7 @@
           infrastructure mgmt.</p>
         <h4>What you will learn</h4>
         <p>- Google App Engine, Site Reliability Engineering (SRE); - Google Kubernetes Engine, and more. On-demand
-          Virtual/Classroom Spark Skill badge Self-paced Labs Resource DS Data Sheet GS Google Skills</p>
+          Virtual/Classroom Spark Skill badge Self-paced Labs Resource</p>
         <h4>Learning path courses</h4>
         <ul>
           <li>Google Cloud Fundamentals: Core Infrastructure</li>
@@ -1743,8 +1736,7 @@
           environment.</p>
         <h4>What you will learn</h4>
         <p>Deriving insights from BigQuery &amp; preparing data for Looker Cloud storage and key application services,
-          Cloud Security Fundamentals On-demand Virtual/Classroom Spark Skill badge Self-paced Labs Resource DS Data
-          Sheet GS Google Skills</p>
+          Cloud Security Fundamentals</p>
         <h4>Learning path courses</h4>
         <ul>
           <li>Introduction to Data Engineering on Google Cloud</li>
@@ -1765,7 +1757,7 @@
           store and retrieve data.</p>
         <h4>What you will learn</h4>
         <p>Google Cloud storage and database services Data migration and replication strategies On-demand
-          Virtual/Classroom Spark Skill badge Self-paced Labs Resource DS Data Sheet GS Google Skills</p>
+          Virtual/Classroom Spark Skill badge Self-paced Labs Resource</p>
         <h4>Learning path courses</h4>
         <ul>
           <li>Preparing for your Professional Database Engineer Journey
@@ -1790,8 +1782,7 @@
         <p>A Data Scientist analyzes, explores, and experiments with data and develops ML models.</p>
         <h4>What you will learn</h4>
         <p>- Vertex AI, AutoML, BigQuery ML, Keras, TensorFlow, Dataflow; - Vertex AI Studio, Model Garden, Vector
-          Search, APIs, and more. On-demand Virtual/Classroom Spark Skill badge Self-paced Labs Resource DS Data Sheet
-          GS Google Skills</p>
+          Search, APIs, and more.</p>
         <h4>Learning path courses</h4>
         <ul>
           <li>Introduction to AI and Machine Learning on Google Cloud</li>
@@ -1819,8 +1810,7 @@
           environment.</p>
         <h4>What you will learn</h4>
         <p>- Google Docs, Google Sheets, Google Slides, Google Calendar, Google Drive; - Google Meet and Google Chat,
-          and more. On-demand Virtual/Classroom Spark Skill badge Self-paced Labs Resource DS Data Sheet GS Google
-          Skills</p>
+          and more.</p>
         <h4>Learning path courses</h4>
         <ul>
           <li>Workspace End User </li>
@@ -1855,7 +1845,7 @@
         <p>A Collaboration Engineer uses Workspace tools for managing applications and users, mail, and migrations.</p>
         <h4>What you will learn</h4>
         <p>- Google Cloud products and service, digital transformation; - IT modernization, and more. On-demand
-          Virtual/Classroom Spark Skill badge Self-paced Labs Resource DS Data Sheet GS Google Skills</p>
+          Virtual/Classroom Spark Skill badge Self-paced Labs Resource</p>
         <h4>Learning path courses</h4>
         <ul>
           <li>Workspace End User </li>
@@ -1887,8 +1877,7 @@
           organizations.</p>
         <h4>What you will learn</h4>
         <p>- How to leverage Generative AI and Google Cloud for organizational transformation; - How to use tools like
-          Gemini Advanced, Notebook LM, and Google AI Studio. On-demand Virtual/Classroom Spark Skill badge Self-paced
-          Labs Resource DS Data Sheet GS Google Skills</p>
+          Gemini Advanced, Notebook LM, and Google AI Studio.</p>
         <h4>Learning path courses</h4>
         <ul>
           <li>Gen AI: Beyond the Chatbot </li>
@@ -1906,7 +1895,7 @@
           they benefit organizations</p>
         <h4>What you will learn</h4>
         <p>- Google Cloud products and services, digital transformation; - IT modernization, and more. On-demand
-          Virtual/Classroom Spark Skill badge Self-paced Labs Resource DS Data Sheet GS Google Skills</p>
+          Virtual/Classroom Spark Skill badge Self-paced Labs Resource</p>
         <h4>Learning path courses</h4>
         <ul>
           <li>Digital Transformation with Google Cloud </li>
@@ -1928,8 +1917,7 @@
         <p>This learning path guides you through the fundamentals of becoming a successful mobile and desktop
           application creator.</p>
         <h4>What you will learn</h4>
-        <p>- AppSheet - BigQuery Data in Connected Sheets On-demand Virtual/Classroom Spark Skill badge Self-paced Labs
-          Resource DS Data Sheet GS Google Skills</p>
+        <p>- AppSheet - BigQuery Data in Connected Sheets</p>
         <h4>Learning path courses</h4>
         <ul>
           <li>AppSheet Developer</li>
@@ -1948,8 +1936,7 @@
         <p>Gemini Enterprise is an AI-powered enterprise platform that unifies search, intelligent agents, and your
           company&#x27;s data to accelerate workflow and automate complex tasks.</p>
         <h4>What you will learn</h4>
-        <p>Gemini Enterprise; NotebookLM, and more. On-demand Virtual/Classroom Spark Skill badge Self-paced Labs
-          Resource DS Data Sheet GS Google Skills</p>
+        <p>Gemini Enterprise; NotebookLM, and more.</p>
         <h4>Learning path courses</h4>
         <ul>
           <li>Gemini Enterprise and NotebookLM Enterprise Essentials </li>
@@ -2002,7 +1989,7 @@
         <p>A cloud engineer configures, sets up, and deploys cloud solutions.</p>
         <h4>What you will learn</h4>
         <p>Google Compute Engine, Cloud Logging, Cloud Monitoring; Google Cloud Storage, and more. On-demand
-          Virtual/Classroom Spark Skill badge Self-paced Labs Resource DS Data Sheet GS Google Skills</p>
+          Virtual/Classroom Spark Skill badge Self-paced Labs Resource</p>
         <h4>Learning path courses</h4>
         <ul>
           <li>Google Cloud Fundamentals: Core Infrastructure</li>
@@ -2029,8 +2016,7 @@
         <h4>Overview</h4>
         <p>A Cloud Architect designs, develops, and manages robust, secure, scalable, and dynamic solutions.</p>
         <h4>What you will learn</h4>
-        <p>Google Compute Engine, GKE, Cloud Logging, Cloud Monitoring; Terraform, and more. On-demand Virtual/Classroom
-          Spark Skill badge Self-paced Labs Resource DS Data Sheet GS Google Skills</p>
+        <p>Google Compute Engine, GKE, Cloud Logging, Cloud Monitoring; Terraform, and more.</p>
         <h4>Learning path courses</h4>
         <ul>
           <li>Google Cloud Fundamentals: Core Infrastructure</li>
@@ -2069,7 +2055,7 @@
         <p>A Cloud Developer designs, builds, analyzes, and maintains cloud-native applications.</p>
         <h4>What you will learn</h4>
         <p>- Google Compute Engine, Cloud Logging, Cloud Monitoring; - Google Cloud Storage, and more. On-demand
-          Virtual/Classroom Spark Skill badge Self-paced Labs Resource DS Data Sheet GS Google Skills</p>
+          Virtual/Classroom Spark Skill badge Self-paced Labs Resource</p>
         <h4>Learning path courses</h4>
         <ul>
           <li>Google Cloud Fundamentals: Core Infrastructure</li>
@@ -2097,7 +2083,7 @@
           infrastructure mgmt.</p>
         <h4>What you will learn</h4>
         <p>- Google App Engine, Site Reliability Engineering (SRE); - Google Kubernetes Engine, and more. On-demand
-          Virtual/Classroom Spark Skill badge Self-paced Labs Resource DS Data Sheet GS Google Skills</p>
+          Virtual/Classroom Spark Skill badge Self-paced Labs Resource</p>
         <h4>Learning path courses</h4>
         <ul>
           <li>Google Cloud Fundamentals: Core Infrastructure</li>
